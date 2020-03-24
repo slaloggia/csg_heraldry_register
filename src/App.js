@@ -1,5 +1,14 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import PageHeader from './components/PageHeader'
+import Home from './containers/Home'
+import About from './containers/About'
+import AddMemberForm from './components/AddMemberForm'
+import HeraldryForm from './components/HeraldryForm'
 
 import './App.css';
 
