@@ -1,7 +1,8 @@
 import React from 'react'
+import CardFront from '../components/CardFront'
 
-export default function MemberCard() {
+export default function MemberCard(props) {
     return <div className= "card">
-        <h2>Member Card</h2>
+        <CardFront name={props.name}/>
     </div>
 }
