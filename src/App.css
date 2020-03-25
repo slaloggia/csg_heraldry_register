@@ -37,17 +37,28 @@
   }
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 
 #logo {
   float: left;
+  width: 200px;
+  height: 200px;
+  padding: 10px
 }
 
 .card {
-  height: 200px;
+  height: 250px;
   width: 150px;
+  padding: 10px;
+  border-style: solid
 }
 
 .front-img {
   width: 100%;
-  height: auto
 }
+

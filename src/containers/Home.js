@@ -13,7 +13,11 @@ export default function Home() {
     }, [])
 
     return <div className="flex-container">
-        {members.map(member => <MemberCard props={member} key={member.id} />)}
+        {members.map(member => (
+            <div key={member.id}>
+                <MemberCard {...member}  />
+            </div>
+        ))}
     </div>
 };
 
