@@ -12,7 +12,7 @@ export default function Home() {
         fetchData();
     }, [])
 
-    return <div>
+    return <div className="flex-container">
         {members.map(member => <MemberCard props={member} key={member.id} />)}
     </div>
 };

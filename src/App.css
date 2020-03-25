@@ -42,3 +42,12 @@
   float: left;
 }
 
+.card {
+  height: 200px;
+  width: 150px;
+}
+
+.front-img {
+  width: 100%;
+  height: auto
+}
