@@ -36,30 +36,35 @@ export default function AddMemberForm() {
         <div>
             <h1>Add Member</h1>
             <form onSubmit= {handleSubmit}>
-                <label>Name: </label>
-                <input value={name} placeholder="Full Name" onChange={e => setName(e.target.value)} />
+                <label>Name: 
+                    <input value={name} placeholder="Full Name" onChange={e => setName(e.target.value)} />
+                </label>
                 <br/>
-                <label>Guild Name: </label>
-                <input value={guildName} placeholder="e.g. Scooter, HP, etc." onChange={e => setGuildName(e.target.value)}/>
+                <label>Guild Name: 
+                    <input value={guildName} placeholder="e.g. Scooter, HP, etc." onChange={e => setGuildName(e.target.value)}/>
+                </label>
                 <br/>
-                <label>Year Joined: </label>
-                <select value={joined} onChange={e => setJoined(e.target.value)} >
-                    {listYearOptions()}
-                </select>
+                <label>Year Joined: 
+                    <select value={joined} onChange={e => setJoined(e.target.value)} >
+                        {listYearOptions()}
+                    </select>
+                </label>
                 <br/>
-                <label>Rank: </label>
-                <select value={rank} onChange={e => setRank(e.target.value)} >
-                    <option value="Scholar">Scholar</option>
-                    <option value="Free Scholar">Free Scholar</option>
-                    <option value="Provost" >Provost</option>
-                    <option value="Dean" >Greg</option>
-                </select>
+                <label>Rank: 
+                    <select value={rank} onChange={e => setRank(e.target.value)} >
+                        <option value="Scholar">Scholar</option>
+                        <option value="Free Scholar">Free Scholar</option>
+                        <option value="Provost" >Provost</option>
+                        <option value="Dean" >Greg</option>
+                    </select>
+                </label>
                 <br/>
-                <label>Focus: </label>
-                <select value={focus} onChange={e => setFocus(e.target.value)} >
-                    <option value="Renaissance">Renaissance</option>
-                    <option value="Medieval">Medieval</option>
-                </select>
+                <label>Focus: 
+                    <select value={focus} onChange={e => setFocus(e.target.value)} >
+                        <option value="Renaissance">Renaissance</option>
+                        <option value="Medieval">Medieval</option>
+                    </select>
+                </label>
                 <br/>
                 <input type="Submit" />
             </form>

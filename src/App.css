@@ -40,7 +40,7 @@
 .flex-container {
   display: flex;
   flex-flow: row wrap;
-  align-content: space-around
+  align-content: space-around;
 }
 
 
@@ -48,14 +48,15 @@
   float: left;
   width: 200px;
   height: 200px;
-  padding: 10px
+  padding: 10px;
 }
 
 .card {
-  height: 250px;
-  width: 150px;
+  width: 200px;
   padding: 10px;
-  border-style: solid
+  border-style: solid;
+  border-width: 2px;
+  margin: 10px;
 }
 
 .front-img {
