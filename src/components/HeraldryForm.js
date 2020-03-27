@@ -16,23 +16,17 @@ export default function HeraldryForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const heraldryObj = {
-            member: {name: memberName},
-            heraldry: {
-                colors: colors,
-                blazon: blazon,
-                motto: motto
-            }
+        const heraldryObj = new FormData()
+        heraldryObj.append('member[name]', memberName)
+        if (colors !== "") heraldryObj.append('heraldry[colors]', colors)
+        if (motto !== "") heraldryObj.append('heraldry[motto]', motto)
+        if (blazon !== "") heraldryObj.append('heraldry[blazon]', blazon)
+        if (image.raw) {heraldryObj.append('heraldry[coat_of_arms]', image.raw)
         }
-        if (image.raw) {heraldryObj.heraldry.image = image.raw}
 
         const reqObj = {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(heraldryObj)
+            body: heraldryObj
         }
         fetch('http://localhost:5000/heraldries', reqObj)
         .then(resp => resp.json())
