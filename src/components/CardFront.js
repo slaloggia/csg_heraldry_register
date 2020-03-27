@@ -7,9 +7,11 @@ export default function CardFront(member) {
             <div className="member-info" >
                 <h3>{member.name}</h3>
                 {member.guild_name ? <h5>AKA {member.guild_name}</h5> : null}
+                <div className="member-stats" >
                 <p>Joined: {member.joined}</p>
                 <p>Rank: {member.rank}</p>
                 <p>Focus: {member.focus}</p>
+                </div>
             </div>
         </div>
     )
