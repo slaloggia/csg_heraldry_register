@@ -5,19 +5,43 @@ export default function HeraldryForm() {
     const [colors, setColors] = useState('')
     const [motto, setMotto] = useState('')
     const [blazon, setBlazon] = useState('')
-    const [image, setImage] = useState({preview: '', raw: ''})
+    const [image, setImage] = useState({preview: undefined, raw: undefined})
 
     const handleImage = (event) => {
         setImage({
             raw: event.target.files[0],
             preview: URL.createObjectURL(event.target.files[0])
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const heraldryObj = {
+            member: {name: memberName},
+            heraldry: {
+                colors: colors,
+                blazon: blazon,
+                motto: motto
+            }
         }
-        )
+        if (image.raw) {heraldryObj.heraldry.image = image.raw}
+
+        const reqObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(heraldryObj)
+        }
+        fetch('http://localhost:5000/heraldries', reqObj)
+        .then(resp => resp.json())
+        .then(data => console.log(data))
     }
     return (
         <div>
             <h1>Heraldry Form</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Name:
                     <input value={memberName} onChange={e=>setMemberName(e.target.value)} placeholder="Full Name" />
                 </label><br/>
