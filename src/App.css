@@ -41,15 +41,22 @@ body {
   }
 }
 
+
+
 #page-header {
   height: 200px;
-  margin: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: fixed;
 }
 
 .flex-container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
+  position: relative;
+  top: 230px;
 }
 
 
@@ -62,17 +69,28 @@ body {
 
 .card {
   width: 200px;
+  height: 355px;
   padding: 10px;
+  background-color: ivory;
   border-style: solid;
   border-width: 2px;
   margin: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 2px 6px 6px rgba(0,0,0,0.23);
+}
+
+.card:hover {
+  transform: scale(1.1)
 }
 
 .front-img {
   width: 100%;
 }
 
+.member-info {
+  line-height: 2px;
+}
+
 .member-stats {
-  text-align: left
+  text-align: left;
 }
 

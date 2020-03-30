@@ -12,12 +12,14 @@ export default function Home() {
         fetchData();
     }, [])
 
-    return <div className="flex-container">
-        {members.map(member => (
-            <div key={member.id}>
-                <MemberCard {...member}  />
-            </div>
-        ))}
-    </div>
+    return (
+        <div className="flex-container">
+            {members.map(member => (
+                <div key={member.id}>
+                    <MemberCard {...member}  />
+                </div>
+            ))}
+        </div>
+    )
 };
 
