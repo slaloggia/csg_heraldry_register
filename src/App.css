@@ -48,7 +48,7 @@ body {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 30px;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .flex-container {
@@ -57,6 +57,7 @@ body {
   align-content: space-around;
   position: relative;
   top: 230px;
+  padding: 40px;
 }
 
 

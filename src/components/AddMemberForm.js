@@ -59,12 +59,13 @@ export default function AddMemberForm() {
                     </select>
                 </label>
                 <br/>
-                <label>Focus: 
-                    <select value={focus} onChange={e => setFocus(e.target.value)} >
-                        <option value="Renaissance">Renaissance</option>
-                        <option value="Medieval">Medieval</option>
-                    </select>
-                </label>
+                <fieldset onChange={setFocus} >
+                <legend>Focus: </legend>
+                    <input id="Renaissance" type="radio" value="Renaissance" name="focus" />
+                    <label for="Renaissance">Renaissance </label><br/>
+                    <input id="Medieval" type="radio" value="Medieval" name="focus" />
+                    <label for="Medieval">Medieval </label>
+                </fieldset>
                 <br/>
                 <input type="Submit" />
             </form>

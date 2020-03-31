@@ -33,7 +33,7 @@ export default function HeraldryForm() {
         .then(data => console.log(data))
     }
     return (
-        <div>
+        <div className="heraldry-form">
             <h1>Heraldry Form</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name:
