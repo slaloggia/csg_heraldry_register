@@ -18,12 +18,11 @@ export default function AddMemberForm() {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: password
+            body: JSON.stringify({password: password})
         }
-
         fetch('http://localhost:5000/auth', reqObj)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => data.auth === "Authorized" ? setAuth(true) : alert(data.auth))
     }
 
     const handleSubmit = (event) => {
@@ -81,18 +80,21 @@ export default function AddMemberForm() {
                 <br/>
                 <fieldset onChange={setFocus} >
                 <legend>Focus: </legend>
+                    <label >Renaissance 
                     <input id="Renaissance" type="radio" value="Renaissance" name="focus" />
-                    <label for="Renaissance">Renaissance </label><br/>
+                    </label><br/>
+                    <label>Medieval
                     <input id="Medieval" type="radio" value="Medieval" name="focus" />
-                    <label for="Medieval">Medieval </label>
+                     </label>
                 </fieldset>
                 <br/>
                 <input type="Submit" />
             </form>
             :
-            <form>
-                <label for="admin-password" >Admin Password: </label>
+            <form onSubmit={handleAuth}>
+                <label>Enter Admin Password: 
                 <input id="admin-password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                </label>
                 <input type="Submit" />
             </form>
             }
