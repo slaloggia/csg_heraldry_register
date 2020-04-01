@@ -25,23 +25,24 @@ export default function About() {
                 When creating a shield, the Scholar must, at a minimum, choose a field color(s) and a division of the field or Ordinary or Charge. 
                 Depending on the complexity desired the shield may include all of the above.<br/>
                 The following links provide some generic explanations of the shield and associated elements.  
+                </p>
                     <ul>
-                        <li><a href="https://en.wikipedia.org/wiki/Escutcheon_(heraldry)" target="_blank">Escutcheon</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Escutcheon_(heraldry)" target="_blank" rel="noopener noreferrer" >Escutcheon</a></li>
                         <li><a href="https://en.wikipedia.org/wiki/Blazon " target="blank">Blazon</a></li>
                     </ul>
-                </p>
+                
                 <h4>Guidelines</h4>
                     <ul>
                         <li>Shield Shape – A standard “heater style” shield shape will be utilized, in keeping with the Guild’s shield 
                             style.
                         </li>
-                        <li><a href="https://en.wikipedia.org/wiki/Tincture_(heraldry)" target="_blank">Field Colors – (Tincture)</a>– Metals: Silver (white), Gold (yellow), Red, Maroon, Orange, Blue, Green, Purple, Black, Brown, Grey, Sky Blue - Patterns/Furs  </li>
-                        <li><a href="https://en.wikipedia.org/wiki/Division_of_the_field" target="_blank">Divisions of the Field</a> </li>
-                        <li><a href="https://en.wikipedia.org/wiki/Charge_(heraldry)" target="_blank">Charges</a> – A Charge is any device that occupies the field and can be an Ordinary (or geometric pattern), a common charge, a figure, animal, plant, object, or a grouping of these 
+                        <li><a href="https://en.wikipedia.org/wiki/Tincture_(heraldry)" target="_blank" rel="noopener noreferrer" >Field Colors – (Tincture)</a>– Metals: Silver (white), Gold (yellow), Red, Maroon, Orange, Blue, Green, Purple, Black, Brown, Grey, Sky Blue - Patterns/Furs  </li>
+                        <li><a href="https://en.wikipedia.org/wiki/Division_of_the_field" target="_blank" rel="noopener noreferrer" >Divisions of the Field</a> </li>
+                        <li><a href="https://en.wikipedia.org/wiki/Charge_(heraldry)" target="_blank" rel="noopener noreferrer" >Charges</a> – A Charge is any device that occupies the field and can be an Ordinary (or geometric pattern), a common charge, a figure, animal, plant, object, or a grouping of these 
                             <ul>
-                                <li><a href="https://en.wikipedia.org/wiki/Ordinary_(heraldry)" target="_blank">Ordinaries </a>can stand alone or can be used to divide the field </li>
-                                <li><a href="https://en.wikipedia.org/wiki/List_of_heraldic_charges" target="_blank">Common charges</a> </li>
-                                <li><a href="https://en.wikipedia.org/wiki/Attitude_(heraldry)" target="_blank">Orientation or “Attitude” of Charges</a></li>
+                                <li><a href="https://en.wikipedia.org/wiki/Ordinary_(heraldry)" target="_blank" rel="noopener noreferrer" >Ordinaries </a>can stand alone or can be used to divide the field </li>
+                                <li><a href="https://en.wikipedia.org/wiki/List_of_heraldic_charges" target="_blank" rel="noopener noreferrer" >Common charges</a> </li>
+                                <li><a href="https://en.wikipedia.org/wiki/Attitude_(heraldry)" target="_blank" rel="noopener noreferrer" >Orientation or “Attitude” of Charges</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,9 +58,8 @@ export default function About() {
                             <ul>
                                 <li>Choose colors, tincture, divisions of the field, and charge</li>
                                 <li>Draft the design - reach out to a Guild book artist for advice if 
-                                you are having difficulty with the composition
-                                <li><a href="https://drawshield.net/index.html" target="_blank">DrawShield</a> may also be a helpful resource for learning blazonry and creating a digital version of your shield </li>
-                                </li>
+                                you are having difficulty with the composition</li>
+                                <li><a href="https://drawshield.net/index.html" target="_blank" rel="noopener noreferrer" >DrawShield</a> may also be a helpful resource for learning blazonry and creating a digital version of your shield </li>
                             </ul>
                         </li>
                         <li>Have your design approved by the Dean and a Guild book artist</li>
