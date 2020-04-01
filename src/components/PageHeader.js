@@ -5,8 +5,10 @@ export default function PageHeader() {
         <div id="page-header">
             <span>
             <img src={require('../assets/csglogo.jpg')} id="logo" alt= "CSG logo" />
-            <h1>Chicago Swordplay Guild</h1>
-            <h2>Heraldic Register</h2>
+            <span id="title">
+                <h1>Chicago Swordplay Guild</h1>
+                <h2>Heraldic Register</h2>
+            </span>
             <nav className="links-menu">
                 <a href="/" >Home</a><br/>
                 <a href="/about">About</a><br/>

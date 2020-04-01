@@ -2,11 +2,29 @@ import React, { useState } from 'react'
 
 
 export default function AddMemberForm() {
+    const [auth, setAuth] = useState(false)
+    const [password, setPassword] = useState('')
     const [name, setName] = useState('')
     const [guildName, setGuildName] = useState('')
     const [joined, setJoined] = useState('')
     const [rank, setRank] = useState('')
     const [focus, setFocus] = useState('')
+
+    const handleAuth = (event) => {
+        event.preventDefault()
+        const reqObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: password
+        }
+
+        fetch('http://localhost:5000/auth', reqObj)
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -33,8 +51,10 @@ export default function AddMemberForm() {
     
 
     return (
+        
         <div>
             <h1>Add Member</h1>
+            {auth ?
             <form onSubmit= {handleSubmit}>
                 <label>Name: 
                     <input value={name} placeholder="Full Name" onChange={e => setName(e.target.value)} />
@@ -69,6 +89,13 @@ export default function AddMemberForm() {
                 <br/>
                 <input type="Submit" />
             </form>
+            :
+            <form>
+                <label for="admin-password" >Admin Password: </label>
+                <input id="admin-password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                <input type="Submit" />
+            </form>
+            }
         </div>
 
     )

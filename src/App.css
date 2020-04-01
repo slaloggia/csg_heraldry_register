@@ -51,6 +51,10 @@ body {
   /* position: fixed; */
 }
 
+nav {
+  float: right
+}
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -84,7 +88,8 @@ body {
 }
 
 .front-img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .member-info {
