@@ -20,7 +20,7 @@ export default function AddMemberForm() {
             },
             body: JSON.stringify({password: password})
         }
-        fetch('http://localhost:5000/auth', reqObj)
+        fetch('https://csg-heraldry-api.herokuapp.com/auth', reqObj)
         .then(resp => resp.json())
         .then(data => data.auth === "Authorized" ? setAuth(true) : alert(data.auth))
     }
@@ -43,7 +43,7 @@ export default function AddMemberForm() {
             body: JSON.stringify(memberObj)
         }
 
-        fetch('http://localhost:5000/members', reqObj)
+        fetch('https://csg-heraldry-api.herokuapp.com/members', reqObj)
         .then(resp => resp.json())
         .then(data => console.log(data))
     }

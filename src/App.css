@@ -3,7 +3,9 @@
 }
 
 body {
-  background-image: url('./assets/antique-paper.jpg')
+  background-image: url('https://cache.desktopnexus.com/thumbseg/2505/2505246-bigthumbnail.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {

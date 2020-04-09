@@ -5,7 +5,7 @@ export default function Home() {
     const [members, setMembers] = useState([])
     useEffect(() => {
         async function fetchData() {
-            await fetch('http://localhost:5000/members')
+            await fetch('https://csg-heraldry-api.herokuapp.com/members')
             .then(resp => resp.json())
             .then(data => setMembers(data.members))
         }

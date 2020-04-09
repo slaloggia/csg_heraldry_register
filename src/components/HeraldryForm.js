@@ -28,7 +28,7 @@ export default function HeraldryForm() {
             method: 'POST',
             body: heraldryObj
         }
-        fetch('http://localhost:5000/heraldries', reqObj)
+        fetch('https://csg-heraldry-api.herokuapp.com/heraldries', reqObj)
         .then(resp => resp.json())
         .then(data => console.log(data))
     }
