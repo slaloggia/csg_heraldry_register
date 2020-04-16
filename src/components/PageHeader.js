@@ -3,7 +3,6 @@ import React from 'react';
 export default function PageHeader() {
     return (
         <div id="page-header">
-            <span>
             <img src={require('../assets/csglogo.jpg')} id="logo" alt= "CSG logo" />
             <span id="title">
                 <h1>Chicago Swordplay Guild</h1>
@@ -15,7 +14,7 @@ export default function PageHeader() {
                 <a href="/member/myheraldry" >Add Your Heraldry</a><br/>
                 <a href="/admin/newmember">Admin</a>
             </nav>
-            </span>
-        </div>)
+        </div>
+        )
 };
 

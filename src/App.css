@@ -46,24 +46,20 @@ body {
 
 
 #page-header {
-  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  height: 20em;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  /* position: fixed; */
+  margin-top: 1em;
 }
 
-nav {
-  float: right
-}
 
 .flex-container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
   position: relative;
-  top: 230px;
-  padding: 40px;
+  padding: 5em;
 }
 
 
@@ -103,7 +99,12 @@ nav {
 }
 
 #about {
-  padding: 20px;
+  padding: 3em;
   text-align: left;
+}
+
+#upload-preview {
+  max-width: 20%;
+  height: auto;
 }
 

@@ -51,7 +51,7 @@ export default function HeraldryForm() {
                 <label >Upload your shield:
                     <input type="file"  onChange={handleImage}/>
                 </label>
-                {image.preview ? <img src={image.preview} alt="preview of attached shield" /> : null}
+                {image.preview ? <img id="upload-preview" src={image.preview} alt="preview of attached shield" /> : null}
                 <br/>
                 <button type="submit">Submit</button>
             </form>
