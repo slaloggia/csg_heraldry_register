@@ -13,10 +13,10 @@ export default function Home() {
     }, [])
 
     return (
-        <div className="flex-container">
+        <div id="card-grid">
             {members.map(member => (
                 <div key={member.id}>
-                    <MemberCard {...member}  />
+                    <MemberCard {...member} />
                 </div>
             ))}
         </div>

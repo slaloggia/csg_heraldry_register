@@ -54,12 +54,11 @@ body {
 }
 
 
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: space-around;
-  position: relative;
-  padding: 5em;
+#card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  padding: 2rem;
 }
 
 
@@ -71,8 +70,8 @@ body {
 }
 
 .card {
-  width: 200px;
-  height: 355px;
+  width: 100%;
+  height: auto;
   padding: 10px;
   background-color: ivory;
   border-style: solid;
