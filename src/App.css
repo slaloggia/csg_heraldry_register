@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://cache.desktopnexus.com/thumbseg/2505/2505246-bigthumbnail.jpg');
+  background-image: url("assets/antique-paper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -17,7 +17,6 @@ body {
   left: 0;
   background-color: black;
   justify-content: space-around;
-  height: 20vh;
   width: 100%;
   z-index: 10;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -26,43 +25,39 @@ body {
 #title {
   font-family: 'Tangerine', cursive;
   color: white;
-  margin-top: 1em;
+  margin-top: 2%;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 7vmin;
   margin: 0px;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 6vmin;
   margin-top: 0px;
-}
-
-#logo {
-  width: 25%;
 }
 
 #logo-img {
   max-height: 90%;
   width: auto;
+  padding-top: 2%;
 }
 
 #links-menu {
-  width: 25%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center
 }
 
 #links-menu a {
   text-decoration: none;
-  color: #006633;
-  font-size: 1.25rem;
+  color: #028845;
+  font-size: 2.5vmin;
+  font-weight: bold;
 }
 
 #links-menu a:hover {
-  font-size:1.4rem;
+  font-size: 3.5vmin;
   color: white;
 }
 
@@ -80,13 +75,12 @@ h2 {
 }
 
 .card {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  padding: 10px;
+  padding: 2%;
   background-color: ivory;
   border-style: solid;
   border-width: 2px;
-  margin: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 2px 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -121,18 +115,54 @@ h2 {
   height: auto;
 }
 
+/* Desktop layout */
+@media (min-width: 600px) {
+  #page-header {
+    flex-direction: row;
+    height: 20vh;
+  }
+  
+  #logo {
+    width: 25%;
+  }
+    
+  #links-menu {
+    width: 25%;
+    flex-direction: column;
+    align-items: center
+  }
+}
+
+/* Mobile layout */
 @media (max-width: 600px) {
   #page-header {
     flex-direction: column;
+    height: 30vh;
+  }
+
+  #logo, #title, #links-menu {
+    width: 100%;
   }
 
   #logo {
-    width: 100%;
-    height: auto;
+    height: 50%;
+  }
+
+  #title {
+    height: 30%;
   }
 
   #links-menu {
+    height: 20%;
     flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #card-grid, #about, .heraldry-form {
+    top: 30vh;
+    position: absolute;
   }
 }
+
+
 
