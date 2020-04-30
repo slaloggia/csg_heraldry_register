@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
+
 
 export default function HeraldryForm() {
     const [memberName, setMemberName] = useState('')
@@ -6,6 +8,7 @@ export default function HeraldryForm() {
     const [motto, setMotto] = useState('')
     const [blazon, setBlazon] = useState('')
     const [image, setImage] = useState({preview: undefined, raw: undefined})
+    const [redirect, setRedirect] = useState(false)
 
     const handleImage = (event) => {
         setImage({
@@ -30,9 +33,13 @@ export default function HeraldryForm() {
         }
         fetch('https://csg-heraldry-api.herokuapp.com/heraldries', reqObj)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(setRedirect(true))
+
+        
     }
     return (
+        <>
+        {redirect ? <Redirect to="/" /> : null}
         <div className="heraldry-form">
             <h1>Heraldry Form</h1>
             <form onSubmit={handleSubmit}>
@@ -56,5 +63,6 @@ export default function HeraldryForm() {
                 <button type="submit">Submit</button>
             </form>
         </div>
+        </>
     )
 }
