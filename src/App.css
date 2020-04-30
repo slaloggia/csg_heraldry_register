@@ -1,72 +1,82 @@
-.App {
-  text-align: center;
-}
-
 body {
   background-image: url('https://cache.desktopnexus.com/thumbseg/2505/2505246-bigthumbnail.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  min-height: 150vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 
 #page-header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
   justify-content: space-around;
-  height: 20em;
+  height: 20vh;
   width: 100%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#title {
+  font-family: 'Tangerine', cursive;
+  color: white;
   margin-top: 1em;
 }
 
+h1 {
+  font-size: 4rem;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 0px;
+}
+
+#logo {
+  width: 25%;
+}
+
+#logo-img {
+  max-height: 90%;
+  width: auto;
+}
+
+#links-menu {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#links-menu a {
+  text-decoration: none;
+  color: #006633;
+  font-size: 1.25rem;
+}
+
+#links-menu a:hover {
+  font-size:1.4rem;
+  color: white;
+}
+
+#card-grid, #about {
+  top: 25vh;
+  position: absolute;
+}
 
 #card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 3rem;
   padding: 2rem;
-}
-
-
-#logo {
-  float: left;
-  width: 200px;
-  height: 200px;
-  padding: 10px;
+  z-index: 1;
 }
 
 .card {
@@ -93,6 +103,10 @@ body {
   line-height: 2px;
 }
 
+.guild-name {
+  height: 1rem;
+}
+
 .member-stats {
   text-align: left;
 }
@@ -105,5 +119,20 @@ body {
 #upload-preview {
   max-width: 20%;
   height: auto;
+}
+
+@media (max-width: 600px) {
+  #page-header {
+    flex-direction: column;
+  }
+
+  #logo {
+    width: 100%;
+    height: auto;
+  }
+
+  #links-menu {
+    flex-direction: row;
+  }
 }
 

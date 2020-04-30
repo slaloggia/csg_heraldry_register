@@ -5,8 +5,8 @@ export default function CardFront(member) {
         <div>
             <img src={member.heraldry && member.heraldry.coat_of_arms ? member.heraldry.coat_of_arms : require('../assets/shield.png')} alt="blank shield" className="front-img"/>
             <div className="member-info" >
-                <h3>{member.name}</h3>
-                {member.guild_name ? <h5>AKA {member.guild_name}</h5> : null}
+                <h3 className="member-name">{member.name}</h3>
+                <h5 className="guild-name">{member.guild_name ? `AKA ${member.guild_name}`  : "" }</h5>
                 <div className="member-stats" >
                 <p>Joined: {member.joined}</p>
                 <p>Rank: {member.rank}</p>
