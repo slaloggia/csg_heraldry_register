@@ -33,13 +33,11 @@ export default function HeraldryForm() {
         }
         fetch('https://csg-heraldry-api.herokuapp.com/heraldries', reqObj)
         .then(resp => resp.json())
-        .then(setRedirect(true))
+        .then(window.location.href="https://csg-heraldry-register.herokuapp.com")
 
         
     }
     return (
-        <>
-        {redirect ? <Redirect to="/" /> : null}
         <div className="heraldry-form">
             <h1>Heraldry Form</h1>
             <form onSubmit={handleSubmit}>
@@ -63,6 +61,5 @@ export default function HeraldryForm() {
                 <button type="submit">Submit</button>
             </form>
         </div>
-        </>
     )
 }
