@@ -51,26 +51,26 @@ export default function AddMemberForm() {
 
     return (
         
-        <div>
+        <div id="member-form" className="form-container">
             <h1>Add Member</h1>
             {auth ?
-            <form onSubmit= {handleSubmit}>
+            <form className="form" onSubmit= {handleSubmit}>
                 <label>Name: 
-                    <input value={name} placeholder="Full Name" onChange={e => setName(e.target.value)} />
+                    <input className="form-entry" value={name} placeholder="Full Name" onChange={e => setName(e.target.value)} />
                 </label>
                 <br/>
                 <label>Guild Name: 
-                    <input value={guildName} placeholder="e.g. Scooter, HP, etc." onChange={e => setGuildName(e.target.value)}/>
+                    <input className="form-entry" value={guildName} placeholder="e.g. Scooter, HP, etc." onChange={e => setGuildName(e.target.value)}/>
                 </label>
                 <br/>
                 <label>Year Joined: 
-                    <select value={joined} onChange={e => setJoined(e.target.value)} >
+                    <select className="form-entry" value={joined} onChange={e => setJoined(e.target.value)} >
                         {listYearOptions()}
                     </select>
                 </label>
                 <br/>
                 <label>Rank: 
-                    <select value={rank} onChange={e => setRank(e.target.value)} >
+                    <select className="form-entry" value={rank} onChange={e => setRank(e.target.value)} >
                         <option value="Scholar">Scholar</option>
                         <option value="Free Scholar">Free Scholar</option>
                         <option value="Provost" >Provost</option>
@@ -88,14 +88,14 @@ export default function AddMemberForm() {
                      </label>
                 </fieldset>
                 <br/>
-                <input type="Submit" />
+                <button className="submit" type="Submit">Submit</button>
             </form>
             :
-            <form onSubmit={handleAuth}>
+            <form className="form" onSubmit={handleAuth}>
                 <label>Enter Admin Password: 
-                <input id="admin-password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                <input className="form-entry" id="admin-password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label>
-                <input type="Submit" />
+                <button className="submit" type="Submit">Submit</button>
             </form>
             }
         </div>

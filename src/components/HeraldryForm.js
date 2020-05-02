@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom'
 
 
 export default function HeraldryForm() {
@@ -8,7 +7,6 @@ export default function HeraldryForm() {
     const [motto, setMotto] = useState('')
     const [blazon, setBlazon] = useState('')
     const [image, setImage] = useState({preview: undefined, raw: undefined})
-    const [redirect, setRedirect] = useState(false)
 
     const handleImage = (event) => {
         setImage({
@@ -38,27 +36,29 @@ export default function HeraldryForm() {
         
     }
     return (
-        <div className="heraldry-form">
+        <div id="heraldry-form" className="form-container">
             <h1>Heraldry Form</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <label>Name:
-                    <input value={memberName} onChange={e=>setMemberName(e.target.value)} placeholder="Full Name" />
+                    <input className="form-entry" value={memberName} onChange={e=>setMemberName(e.target.value)} placeholder="Full Name" />
                 </label><br/>
                 <label>Colors:
-                    <input value={colors} onChange={e=>setColors(e.target.value)} placeholder="green, black" />
+                    <input className="form-entry" value={colors} onChange={e=>setColors(e.target.value)} placeholder="green, black" />
                 </label><br/>
                 <label>Motto:
-                    <input value={motto} onChange={e=>setMotto(e.target.value)} placeholder="Ferrum Non Verbum" />
+                    <input className="form-entry" value={motto} onChange={e=>setMotto(e.target.value)} placeholder="Ferrum Non Verbum" />
                 </label><br/>
                 <label>Blazon:
                     <textarea value={blazon} onChange={e=>setBlazon(e.target.value)} placeholder="Upon a Field wavy, sable and vert, a Winged Lion rampant argent, bearing a Longsword and Rapier, in Chief a row of Guinness sable"/>
                 </label><br/>
                 <label >Upload your shield:
-                    <input type="file"  onChange={handleImage}/>
+                    <input className="file-upload" type="file"  onChange={handleImage}/>
                 </label>
-                {image.preview ? <img id="upload-preview" src={image.preview} alt="preview of attached shield" /> : null}
+                <div id="preview-container">
+                    {image.preview ? <img id="upload-preview" src={image.preview} alt="preview of attached shield" /> : null}
+                </div>
                 <br/>
-                <button type="submit">Submit</button>
+                <button className="submit" type="submit">Submit</button>
             </form>
         </div>
     )

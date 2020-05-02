@@ -15,16 +15,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: black;
+  background-image: url("assets/antique-paper.jpg");
+  background-size: cover;
+  background-clip: content-box;
   justify-content: space-around;
   width: 100%;
   z-index: 10;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 #title {
   font-family: 'Tangerine', cursive;
-  color: white;
+  color: black;
   margin-top: 2%;
 }
 
@@ -51,17 +52,17 @@ h2 {
 
 #links-menu a {
   text-decoration: none;
-  color: #028845;
+  color: #267347;
   font-size: 2.5vmin;
   font-weight: bold;
 }
 
 #links-menu a:hover {
   font-size: 3.5vmin;
-  color: white;
+  color: black;
 }
 
-#card-grid, #about, .heraldry-form {
+#card-grid, #about, .form-container {
   top: 25vh;
   position: absolute;
 }
@@ -110,9 +111,76 @@ h2 {
   text-align: left;
 }
 
+#preview-container {
+  max-width: 200px;
+  max-height: 300px;
+}
+
 #upload-preview {
-  max-width: 20%;
+  max-width: 100%;
   height: auto;
+}
+
+.form-container {
+  width: 100%;
+  padding-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  min-width: 40%;
+  margin-top: 6vh;
+	display: flex;
+	flex-direction: column;
+	font-family: sans-serif;
+	font-size: 1.2rem;
+  background-color: rgba(255, 250, 250, 0.5);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 2px 6px 6px rgba(0,0,0,0.23);
+	padding: 2em;
+	border-radius: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.form-entry {
+  width: 100%;
+	height: 1.5rem;
+	margin-bottom: 1rem;
+  font-size: inherit;
+  padding: 0.5rem;
+}
+
+textarea {
+	width: 100%;
+  height: 4rem;
+  font-size: inherit;
+  padding: 0.5rem;
+}
+
+input.file-upload {
+  width: 75%;
+  height: 3rem;
+  display: flex;
+  padding: 2%;
+  font-size: inherit;
+  align-items: center;
+  
+}
+
+#file-upload-button {
+  font-size: inherit;
+}
+
+button.submit {
+  display: block;
+  width: 30%;
+  font-size: inherit;
+  padding: 2%;
+  background-color: #267347;
+  color: rgb(255, 250, 240);
+  align-self: center;
 }
 
 /* Desktop layout */
