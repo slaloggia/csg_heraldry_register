@@ -7,7 +7,7 @@ export default function CardBack(member) {
     return (
         <div className="card-back" 
             style={
-                {backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${member.heraldry.coat_of_arms})`}
+                {backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(${member.heraldry.coat_of_arms})`}
                 
             }
         >
