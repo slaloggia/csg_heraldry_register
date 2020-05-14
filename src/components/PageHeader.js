@@ -14,7 +14,6 @@ export default function PageHeader() {
                 <a href="/" >Home</a><br/>
                 <a href="/about">About</a><br/>
                 <a href="/member/myheraldry" >Add Your Heraldry</a><br/>
-                <a href="/admin/newmember">Admin</a>
             </nav>
         </div>
         )
