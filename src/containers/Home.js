@@ -16,7 +16,7 @@ export default function Home() {
         <div id="card-grid">
             {members.map(member => (
                 <div key={member.id}>
-                    <MemberCard {...member} />
+                    <MemberCard {...member}/>
                 </div>
             ))}
         </div>

@@ -3,16 +3,21 @@ import CardFront from '../components/CardFront'
 import CardBack from '../components/CardBack'
 
 export default function MemberCard(member) {
-    const [displayFront, setdisplayFront] = useState(true)
+    const [selected, setSelected] = useState(false)
 
-    const handleClick = () => {
-        setdisplayFront(!displayFront)
+    const flipBack = () => {
+        setSelected(true)
     }
 
-    return <div className= "card" id={member.id} onClick={handleClick}>
-        {displayFront ?
-            <CardFront {...member}/> :
+    const flipFront = () => {
+        setSelected(false)
+    }
+
+    return <div className= "card" id={member.id} onMouseEnter={flipBack} onMouseLeave={flipFront}>
+        {selected ?
             <CardBack {...member}/>
+            :
+            <CardFront {...member}/>
         }
     </div>
 }
