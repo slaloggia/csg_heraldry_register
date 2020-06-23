@@ -87,7 +87,7 @@ h2 {
 }
 
 .card:hover {
-  transform: scale(1.1)
+  transform: scale(1.025)
 }
 
 .front-img {
@@ -185,6 +185,13 @@ h2 {
 	margin-bottom: 1rem;
   font-size: inherit;
   padding: 0.5rem;
+}
+
+select {
+  width: 100%;
+  line-height: 2;
+  font-size: inherit;
+  
 }
 
 textarea {

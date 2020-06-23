@@ -20,7 +20,7 @@ export default function AddMemberForm() {
             },
             body: JSON.stringify({password: password})
         }
-        fetch('https://csg-heraldry-api.herokuapp.com/auth', reqObj)
+        fetch('http://localhost:3000/auth', reqObj)
         .then(resp => resp.json())
         .then(data => data.auth === "Authorized" ? setAuth(true) : alert(data.auth))
     }
@@ -43,7 +43,7 @@ export default function AddMemberForm() {
             body: JSON.stringify(memberObj)
         }
 
-        fetch('https://csg-heraldry-api.herokuapp.com/members', reqObj)
+        fetch('https://localhost:3000/members', reqObj)
         .then(resp => resp.json())
         .then(data => console.log(data))
     }
@@ -63,14 +63,16 @@ export default function AddMemberForm() {
                     <input className="form-entry" value={guildName} placeholder="e.g. Scooter, HP, etc." onChange={e => setGuildName(e.target.value)}/>
                 </label>
                 <br/>
+                
                 <label>Year Joined: 
-                    <select className="form-entry" value={joined} onChange={e => setJoined(e.target.value)} >
+                    <select value={joined} onChange={e => setJoined(e.target.value)} >
                         {listYearOptions()}
                     </select>
                 </label>
+                
                 <br/>
                 <label>Rank: 
-                    <select className="form-entry" value={rank} onChange={e => setRank(e.target.value)} >
+                    <select value={rank} onChange={e => setRank(e.target.value)} >
                         <option value="Scholar">Scholar</option>
                         <option value="Free Scholar">Free Scholar</option>
                         <option value="Provost" >Provost</option>
