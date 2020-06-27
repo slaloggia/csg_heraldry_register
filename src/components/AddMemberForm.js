@@ -20,14 +20,22 @@ export default function AddMemberForm() {
             },
             body: JSON.stringify({password: password})
         }
-        fetch('http://localhost:3000/auth', reqObj)
+        fetch('https://csg-heraldry-api.herokuapp.com//auth', reqObj)
         .then(resp => resp.json())
         .then(data => data.auth === "Authorized" ? setAuth(true) : alert(data.auth))
     }
 
+    const clearForm = () => {
+        setName("");
+        setGuildName("");
+        setJoined("");
+        setRank("");
+        setFocus("");
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        let memberObj = {
+        const memberObj = {
             name: name,
             guild_name: guildName,
             joined: parseInt(joined),
@@ -43,9 +51,15 @@ export default function AddMemberForm() {
             body: JSON.stringify(memberObj)
         }
 
-        fetch('https://localhost:3000/members', reqObj)
+        
+
+        fetch('https://csg-heraldry-api.herokuapp.com//members', reqObj)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .catch(error => alert(error.message))
+        .then(data => alert(
+            data.error ? "Member failed to save" : `Member saved: ${data.member.name}`
+        ))
+        .then(() => clearForm())
     }
     
 
@@ -66,6 +80,7 @@ export default function AddMemberForm() {
                 
                 <label>Year Joined: 
                     <select value={joined} onChange={e => setJoined(e.target.value)} >
+                        <option value= '0' key='0'></option>
                         {listYearOptions()}
                     </select>
                 </label>
@@ -73,6 +88,7 @@ export default function AddMemberForm() {
                 <br/>
                 <label>Rank: 
                     <select value={rank} onChange={e => setRank(e.target.value)} >
+                        <option value=''></option> 
                         <option value="Scholar">Scholar</option>
                         <option value="Free Scholar">Free Scholar</option>
                         <option value="Provost" >Provost</option>
@@ -80,13 +96,13 @@ export default function AddMemberForm() {
                     </select>
                 </label>
                 <br/>
-                <fieldset onChange={setFocus} >
+                <fieldset onChange={e => setFocus(e.target.value)} >
                 <legend>Focus: </legend>
                     <label >Renaissance 
-                    <input id="Renaissance" type="radio" value="Renaissance" name="focus" />
+                    <input id="Renaissance" type="radio" value="Renaissance" name="focus" checked={focus === "Renaissance"}/>
                     </label><br/>
                     <label>Medieval
-                    <input id="Medieval" type="radio" value="Medieval" name="focus" />
+                    <input id="Medieval" type="radio" value="Medieval" name="focus" checked={focus === "Medieval"} />
                      </label>
                 </fieldset>
                 <br/>

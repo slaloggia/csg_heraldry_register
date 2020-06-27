@@ -5,7 +5,7 @@ export default function Home() {
     const [members, setMembers] = useState([])
     useEffect(() => {
         async function fetchData() {
-            await fetch('http://localhost:3000/members')
+            await fetch('https://csg-heraldry-api.herokuapp.com//members')
             .then(resp => resp.json())
             .then(data => setMembers(data.members))
         }
@@ -15,9 +15,11 @@ export default function Home() {
     return (
         <div id="card-grid">
             {members.map(member => (
+                member.heraldry ?
                 <div key={member.id}>
                     <MemberCard {...member}/>
                 </div>
+                : null
             ))}
         </div>
     )
