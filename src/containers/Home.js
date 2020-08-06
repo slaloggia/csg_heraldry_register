@@ -12,12 +12,13 @@ export default function Home() {
         fetchData();
     }, [])
 
+
     return (
-        <div id="card-grid">
+        <div id="card-grid" >
             {members.map(member => (
                 member.heraldry ?
                 <div key={member.id}>
-                    <MemberCard {...member}/>
+                    <MemberCard {...member} />
                 </div>
                 : null
             ))}

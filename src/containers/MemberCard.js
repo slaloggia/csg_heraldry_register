@@ -13,7 +13,7 @@ export default function MemberCard(member) {
         setSelected(false)
     }
 
-    return <div className= "card" id={member.id} onMouseEnter={flipBack} onMouseLeave={flipFront}>
+    return <div className= "card" id={member.id} onMouseEnter={flipBack} onMouseLeave={flipFront} onTouchStart={flipBack} onTouchEnd={flipFront}>
         {selected ?
             <CardBack {...member}/>
             :
