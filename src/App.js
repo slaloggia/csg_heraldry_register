@@ -9,6 +9,7 @@ import Home from './containers/Home'
 import About from './containers/About'
 import AddMemberForm from './components/AddMemberForm'
 import HeraldryForm from './components/HeraldryForm'
+import TestNote from './components/TestNote'
 
 
 import './App.css';
@@ -25,6 +26,7 @@ function App() {
           <Route exact path= '/member/myheraldry' component= {HeraldryForm} />
         </Switch>
       </Router>
+      <TestNote/>
     </div>
   );
 }
