@@ -29,12 +29,20 @@ export default function HeraldryForm() {
             method: 'POST',
             body: heraldryObj
         }
-        fetch('https://localhost:3000/heraldries', reqObj)
+        fetch('https://csg-heraldry-api.herokuapp.com/heraldries', reqObj)
         .then(resp => resp.json())
-        .then(window.location.href="https://csg-heraldry-register.herokuapp.com")
-
-        
+        .catch(error => alert(error.message))
+        .then(clearForm())
     }
+
+    const clearForm = () => {
+        setMemberName("");
+        setColors("");
+        setMotto("");
+        setBlazon("");
+        setImage({preview: undefined, raw: undefined});
+    }
+
     return (
         <div id="heraldry-form" className="form-container">
             <h1>Heraldry Form</h1>
@@ -43,15 +51,15 @@ export default function HeraldryForm() {
                     <input className="form-entry" value={memberName} onChange={e=>setMemberName(e.target.value)} placeholder="Full Name" />
                 </label><br/>
                 <label>Colors:
-                    <input className="form-entry" value={colors} onChange={e=>setColors(e.target.value)} placeholder="green, black" />
+                    <input className="form-entry" value={colors} onChange={e=>setColors(e.target.value)} placeholder="ex: green, black (optional)" />
                 </label><br/>
                 <label>Motto:
-                    <input className="form-entry" value={motto} onChange={e=>setMotto(e.target.value)} placeholder="Ferrum Non Verbum" />
+                    <input className="form-entry" value={motto} onChange={e=>setMotto(e.target.value)} placeholder="ex: Ferrum Non Verbum (optional)" />
                 </label><br/>
                 <label>Blazon:
-                    <textarea value={blazon} onChange={e=>setBlazon(e.target.value)} placeholder="Upon a Field wavy, sable and vert, a Winged Lion rampant argent, bearing a Longsword and Rapier, in Chief a row of Guinness sable"/>
+                    <textarea value={blazon} onChange={e=>setBlazon(e.target.value)} placeholder="ex: Upon a Field wavy, sable and vert, a Winged Lion rampant argent, bearing a Longsword and Rapier, in Chief a row of Guinness sable"/>
                 </label><br/>
-                <label >Upload your shield:
+                <label >Upload your shield (optional):
                     <input className="file-upload" type="file"  onChange={handleImage}/>
                 </label>
                 <div id="preview-container">
