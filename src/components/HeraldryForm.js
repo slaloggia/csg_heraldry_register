@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { config } from '../Constants'
+
+const heraldry_url = config.url.API_URL_HERALDRY
 
 
 export default function HeraldryForm() {
@@ -29,7 +32,8 @@ export default function HeraldryForm() {
             method: 'POST',
             body: heraldryObj
         }
-        fetch('https://csg-heraldry-api.herokuapp.com/heraldries', reqObj)
+        console.log(process.env.REACT_APP_API_URL)
+        fetch(heraldry_url, reqObj)
         .then(resp => resp.json())
         .catch(error => alert(error.message))
         .then(clearForm())

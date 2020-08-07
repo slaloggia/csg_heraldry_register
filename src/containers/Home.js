@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import MemberCard from './MemberCard'
+import { config } from '../Constants'
+
+const member_url = config.url.API_URL_MEMBERS
 
 export default function Home() {
     const [members, setMembers] = useState([])
     useEffect(() => {
         async function fetchData() {
-            await fetch('https://csg-heraldry-api.herokuapp.com//members')
+            await fetch(member_url)
             .then(resp => resp.json())
             .then(data => setMembers(data.members))
         }
