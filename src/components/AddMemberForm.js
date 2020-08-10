@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { config } from '../Constants';
 
+const url = config.url.API_URL
 const member_url = config.url.API_URL_MEMBERS
 
 
@@ -23,7 +24,7 @@ export default function AddMemberForm() {
             },
             body: JSON.stringify({password: password})
         }
-        fetch(member_url, reqObj)
+        fetch(`${url}/auth`, reqObj)
         .then(resp => resp.json())
         .then(data => data.auth === "Authorized" ? setAuth(true) : alert(data.auth))
     }
@@ -56,7 +57,7 @@ export default function AddMemberForm() {
 
         
 
-        fetch('https://csg-heraldry-api.herokuapp.com//members', reqObj)
+        fetch(member_url, reqObj)
         .then(resp => resp.json())
         .catch(error => alert(error.message))
         .then(data => alert(

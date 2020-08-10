@@ -32,7 +32,7 @@ export default function HeraldryForm() {
             method: 'POST',
             body: heraldryObj
         }
-        console.log(process.env.REACT_APP_API_URL)
+        console.log(reqObj)
         fetch(heraldry_url, reqObj)
         .then(resp => resp.json())
         .catch(error => alert(error.message))
