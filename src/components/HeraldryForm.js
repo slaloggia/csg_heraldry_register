@@ -32,21 +32,11 @@ export default function HeraldryForm() {
             method: 'POST',
             body: heraldryObj
         }
-        console.log(reqObj)
         fetch(heraldry_url, reqObj)
         .then(resp => resp.json())
-        .catch(error => alert(error.message))
-        .then(clearForm())
+        .then(data => data.error ? alert(data.error[0]) : window.location.href = "/")
     }
-
-    const clearForm = () => {
-        setMemberName("");
-        setColors("");
-        setMotto("");
-        setBlazon("");
-        setImage({preview: undefined, raw: undefined});
-    }
-
+    
     return (
         <div id="heraldry-form" className="form-container">
             <h1>Heraldry Form</h1>
